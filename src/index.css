@@ -23,6 +23,10 @@ code {
 
 body {
   font-family: 'Poppins', sans-serif;
+  width: 700px;
+  margin: 0 auto;
+  padding: 40px;
+  border: 2px solid red;
 }
 
 .container {
