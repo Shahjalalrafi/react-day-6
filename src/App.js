@@ -14,7 +14,12 @@ import FriendDetail from './React-router/FriendDetail';
 import Countries from './RestCountries/Coutries';
 import Error from './RestCountries/Error'
 import CountryDetails from './RestCountries/CountryDetails';
+import Hello from './siblingsComponent/Hello';
+import Hi from './siblingsComponent/Hi';
+import Thank from './siblingsComponent/Thank';
+import { createContext, useState } from 'react';
 
+export const CategoryDetail = createContext()
 
 function App() {
   // const [tasks, setTask] = useState([
@@ -136,6 +141,8 @@ function App() {
   //   ])
 
 
+  const [count, setCount] = useState("mobile")
+
 
   return (
     <div className="App">
@@ -173,9 +180,11 @@ function App() {
 
 
 
-
-
-
+      <CategoryDetail.Provider value={[count, setCount]}>
+        <Hello></Hello>
+        <Hi  ></Hi>
+        <Thank></Thank>
+      </CategoryDetail.Provider>
 
 
      <Router>
