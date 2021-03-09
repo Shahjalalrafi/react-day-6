@@ -1,9 +1,12 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {  faTrash } from '@fortawesome/free-solid-svg-icons'
 
-const SingleTask = ({task}) => {
+const SingleTask = ({task, onDelete, onToggle}) => {
     return (
-        <div className="task">
-            <h1>{task.name}</h1>
+        <div className={`task ${task.reminder ? 'reminder' : ''}`}>
+            <h3  onDoubleClick= {() => onToggle(task.id)}>{task.name} <FontAwesomeIcon icon={faTrash} onClick={() => onDelete(task.id)} /></h3>
+            <p>{task.date}</p>
         </div>
     );
 };

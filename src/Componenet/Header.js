@@ -9,7 +9,7 @@ const Header = ({title}) => {
     return (
         <header className='header'>
             <h1>Task tracker</h1>
-            <Button color="red" text = "add button" onclick= {onclick} />
+            <Button color="red" text = "add" onclick= {onclick} />
         </header>
     );
 };
